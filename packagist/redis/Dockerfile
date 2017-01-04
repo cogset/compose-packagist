@@ -1,8 +1,9 @@
 # Redis
 FROM redis:3.2
 
-# Log directory.
-RUN mkdir /logs && chown redis:redis /logs
+# Directories.
+RUN mkdir -p /redis/{conf,data,logs}
+    && chown -R redis:redis /redis
 
 # Run with config file.
-CMD ["redis-server", "/etc/redis.conf"]
+CMD ["redis-server", "/redis/conf/redis.conf"]

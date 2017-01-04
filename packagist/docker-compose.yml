@@ -4,7 +4,6 @@ services:
   redis:
     build: ./redis
     volumes:
-      - ../redis/conf/redis.conf:/etc/redis.conf:ro
-      - ../redis/data:/data
-      - ../redis/logs:/logs
-
+      - ../redis/conf/redis.conf:/redis/conf/redis.conf:ro
+      - ../redis/data:/redis/data
+      - ../redis/logs:/redis/logs
