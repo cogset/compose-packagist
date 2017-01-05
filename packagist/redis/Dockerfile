@@ -2,7 +2,7 @@
 FROM redis:3.2
 
 # Directories.
-RUN mkdir -p /redis/{conf,data,logs}
+RUN mkdir -p /redis/{conf,data,logs} \
     && chown -R redis:redis /redis
 
 # Run with config file.

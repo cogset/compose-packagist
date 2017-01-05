@@ -7,3 +7,14 @@ services:
       - ../redis/conf/redis.conf:/redis/conf/redis.conf:ro
       - ../redis/data:/redis/data
       - ../redis/logs:/redis/logs
+  mysql:
+    build: ./mysql
+    volumes:
+      - ../mysql/conf/my.cnf:/mysql/conf/my.cnf:ro
+      - ../mysql/data:/mysql/data
+      - ../mysql/logs:/mysql/logs
+    environment:
+      MYSQL_DATABASE: packagist
+      MYSQL_USER: packagist
+      MYSQL_PASSWORD: my-secret-pw
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
